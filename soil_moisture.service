@@ -1,0 +1,14 @@
+[Unit]
+Description=Soil Moisture Service
+After=network.target mongodb.service pigpiod.service
+
+[Service]
+ExecStart=/home/pi/git/soil_moisture_sensor/start_soil_service.sh
+WorkingDirectory=/home/pi/git/soil_moisture_sensor
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
