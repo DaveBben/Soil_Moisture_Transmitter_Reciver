@@ -3,7 +3,6 @@ import time
 import pigpio
 import struct
 from datetime import datetime
-from pymongo import MongoClient
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
@@ -16,29 +15,17 @@ firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-client = MongoClient()
-client = MongoClient('localhost', 27017)
-db = client.plants
-
 
 def insertIntoDatabase(id, moistureValue, voltage):
-	posts = db.moisture
-	post_data = {
-    'date': datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-    'id': id,
-    'moisture': moistureValue,
-	'battery': voltage
-	}
-	result = posts.insert_one(post_data)
-	print('One post: {0}'.format(result.inserted_id))
 
-	doc_ref = db.collection('plants').add({
+	post_data = {
+    		'id': id,
     		'moisture': moistureValue,
-    		'battery':  voltage,
-    		 'id': id,
-		'date':  datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-		
-	})
+		'battery': voltage,
+		'timestamp': firestore.SERVER_TIMESTAMP
+	}
+
+	doc_ref = db.collection('plants').add(post_data)
 
 while True:
 
