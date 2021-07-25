@@ -1,6 +1,6 @@
 [Unit]
 Description=Soil Moisture Service
-After=network.target mongodb.service pigpiod.service
+After=network.target pigpiod.service
 
 [Service]
 ExecStart=/home/pi/git/soil_moisture_sensor/start_soil_service.sh

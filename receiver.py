@@ -10,6 +10,7 @@ from firebase_admin import firestore
 pi = pigpio.pi()
 rx = piVirtualWire.rx(pi, 18, 2000) # Set pigpio instance, TX module GPIO pin and baud rate
 
+# Need to replace with your own firebase-keys files
 cred = credentials.Certificate('/home/pi/firebase-keys.json')
 firebase_admin.initialize_app(cred)
 
@@ -38,6 +39,7 @@ while True:
 			xhigh = values[7]
 			vlow = values[8]
 			vhigh = values[9]
+			# We need to use bitwise operations to rebuild the original value
 			id = (idHigh << 8) & 0xFF00 | idLow & 0x00FF
 			moistureValue = ( xhigh << 8 ) & 0xFF00 | xlow & 0x00FF
 			voltage = (vhigh << 8) & 0xFF00 | vlow & 0x00FF
