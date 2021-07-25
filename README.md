@@ -5,7 +5,10 @@ This is a personal project of mine to determine whether or not my house plants n
 All of the code for the Atmega328 is located in the `433mhz_transmitter` folder.
 
 ## Receiver Code
-`receiver.py` is the python code which runs on the Raspberry Pi. I also created a service called `soil_moisture.service` which is enabled and executed by systemd on the raspberry pi. This service called the `start_soil_service.sh` after the `pigpiod.service` is called. Make sure that [pigpiod is installed](https://github.com/guymcswain/pigpio-client/wiki/Install-and-configure-pigpiod) on your Raspberry Pi before using this.
+`receiver.py` is the python code which runs on the Raspberry Pi. 
+
+## Systemd Service
+I also created a service called `soil_moisture.service` which is executed by systemd on the raspberry pi. This makes sure that my receiver code is always running. The service calls the `start_soil_service.sh` after the `pigpiod.service` is called. Make sure that [pigpiod is installed](https://github.com/guymcswain/pigpio-client/wiki/Install-and-configure-pigpiod) on your Raspberry Pi before using this.
 
 ## Google Cloud Code
 You can find the function code for Google Cloud [in this repo](https://github.com/DaveBben/fcm_soil_notification_function).
@@ -14,5 +17,9 @@ You can find the function code for Google Cloud [in this repo](https://github.co
 
 # Schematics
 Schematics and Gerber files are located in the `schematic_pcb_gerber_files` folder.
+
+### Related Repos
+Google Cloud Function: [https://github.com/DaveBben/fcm_soil_notification_function](https://github.com/DaveBben/fcm_soil_notification_function)
+
 
 
