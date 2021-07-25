@@ -15,7 +15,7 @@ You can find the function code for Google Cloud [in this repo](https://github.co
 
 ## Android code
 
-# Schematics
+## Schematics
 Schematics and Gerber files are located in the `schematic_pcb_gerber_files` folder.
 
 ### Related Repos
