@@ -14,6 +14,7 @@ I also created a service called `soil_moisture.service` which is executed by sys
 You can find the function code for Google Cloud [in this repo](https://github.com/DaveBben/fcm_soil_notification_function).
 
 ## Android code
+You can find the Android code [in this repo](https://github.com/DaveBben/Soil_Moisture_Notify_App)
 
 ## Schematics
 Schematics and Gerber files are located in the `schematic_pcb_gerber_files` folder.
