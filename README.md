@@ -19,6 +19,8 @@ You can find the Android code [in this repo](https://github.com/DaveBben/Soil_Mo
 ## Schematics
 Schematics and Gerber files are located in the `schematic_pcb_gerber_files` folder.
 
+![Soil Sensor Schematic](https://raw.githubusercontent.com/DaveBben/Soil_Moisture_Transmitter_Reciver/1dfd69d3f45e785389ee7839064db3e3e7a6ca3b/schematic_pcb_gerber_files/Schematic_Wireless%20Soil%20Sensor_2021-07-25.png)
+
 ### Related Repos
 Google Cloud Function: [https://github.com/DaveBben/fcm_soil_notification_function](https://github.com/DaveBben/fcm_soil_notification_function)
 
